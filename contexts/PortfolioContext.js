@@ -5,7 +5,7 @@ export const PortfolioContext = createContext();
 const startingProjects = [
   {
     id: "1",
-    title: "Project One",
+    title: "Pokemon",
     description: "This is my pokemon project",
     tech: ["React", "Tailwind CSS"],
     link: "https://pokemon-one-bay.vercel.app/",
@@ -13,10 +13,10 @@ const startingProjects = [
   },
   {
     id: "2",
-    title: "Project Two",
-    description: "hhh.",
+    title: "Todo-List",
+    description: "Todo-List.",
     tech: ["Next.js", "DaisyUI"],
-    link: "https://example.com/project-two",
+    link: "https://todolist-snowy-pi.vercel.app/",
     image: "/project2.jpg",
   },
   {

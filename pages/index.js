@@ -2,8 +2,35 @@ import React, { useContext, useEffect } from "react";
 import { PortfolioContext } from "@/contexts/PortfolioContext";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 
+// const projects = [
+//   {
+//     id: "1",
+//     title: "Project One2",
+//     description: "This is my pokemon project",
+//     tech: ["React", "Tailwind CSS"],
+//     link: "https://pokemon-one-bay.vercel.app/",
+//     image: "/project1.jpg",
+//   },
+//   {
+//     id: "2",
+//     title: "Project Two",
+//     description: "hhh.",
+//     tech: ["Next.js", "DaisyUI"],
+//     link: "https://example.com/project-two",
+//     image: "/project2.jpg",
+//   },
+//   {
+//     id: "3",
+//     title: "Project Three",
+//     description: "And another demo project for testing.",
+//     tech: ["Next.js", "DaisyUI", "Javascript"],
+//     link: "https://example.com/project-three",
+//     image: "/project3.jpg",
+//   },
+// ];
+
 export default function Home() {
-  const { projects, techSkills } = useContext(PortfolioContext);
+  const { techSkills, projects } = useContext(PortfolioContext);
 
   console.log(projects);
 
