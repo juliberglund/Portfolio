@@ -6,15 +6,15 @@ const startingProjects = [
   {
     id: "1",
     title: "Project One",
-    description: "This is a demo project to showcase my work.",
+    description: "This is my pokemon project",
     tech: ["React", "Tailwind CSS"],
-    link: "https://example.com/project-one",
+    link: "https://pokemon-one-bay.vercel.app/",
     image: "/project1.jpg",
   },
   {
     id: "2",
     title: "Project Two",
-    description: "Another demo project for testing.",
+    description: "hhh.",
     tech: ["Next.js", "DaisyUI"],
     link: "https://example.com/project-two",
     image: "/project2.jpg",

@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { PortfolioContext } from "@/contexts/PortfolioContext";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export default function Home() {
   const { projects, techSkills } = useContext(PortfolioContext);
+
   console.log(projects);
+
   return (
     <div className="flex flex-col min-h-screen">
       <section className="navbar bg-base-300 shadow-md  p-0 custom-navbar">
@@ -111,6 +113,7 @@ export default function Home() {
                 <div className="card-body">
                   <h2 className="card-title">{project.title}</h2>
                   <p>{project.description}</p>
+
                   <div className="card-actions justify-end mt-5">
                     {project.tech.map((tech, index) => (
                       <div key={index} className="badge badge-secondary">
