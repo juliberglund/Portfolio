@@ -87,8 +87,8 @@ export default function Home() {
           <div className="md:ml-10">
             <div className="p-1 bg-gradient-to-tr from-purple-500 via-pink-900 to-blue-500 rounded-full">
               <img
-                src="/profile.jpg"
-                alt="Robin's Profile"
+                src="/julia.JPG"
+                alt="Julias's Profile"
                 className="w-48 h-48 rounded-full shadow-lg object-cover object-top"
               />
             </div>
