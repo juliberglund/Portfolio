@@ -21,11 +21,11 @@ const startingProjects = [
   },
   {
     id: "3",
-    title: "Project Three",
-    description: "And another demo project for testing.",
-    tech: ["Next.js", "DaisyUI", "Javascript"],
-    link: "https://example.com/project-three",
-    image: "/project3.jpg",
+    title: "Bank-Site",
+    description: "This is a bank-site to transfer or add money",
+    tech: ["Docker", "Tailwind CSS", "Javascript"],
+    link: "https://github.com/juliberglund/bank-site",
+    image: "/the-old-bank-rothwell.jpg",
   },
 ];
 
