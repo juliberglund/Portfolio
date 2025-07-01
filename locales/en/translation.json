@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "home": "Home",
+    "skills": "Skills",
+    "projects": "Projects",
+    "admin": "Admin"
+  },
+  "intro": {
+    "hi": "Hi I am",
+    "name": "Julia Berglund",
+    "and_im": "and I’m a",
+    "roles": ["Frontend Developer", "UI Enthusiast", "React Lover"],
+    "downloadCV": "Download CV",
+    "mySocials": "My socials"
+  },
+  "aspiring": {
+    "aspiring": "ASPIRING",
+    "role": "Frontend Developer",
+    "description": "A highly motivated Frontend Developer with a strong passion for clean, interactive, and user-focused design. Eager to contribute my skills in modern web technologies and continue growing in a dynamic and collaborative development environment.",
+    "quote": "▌Tech is my passion. Building is my drive. Growth is my goal."
+  },
+  "projects": {
+    "project1": {
+      "title": "NG AUTO",
+      "subtitle": "Car Dealership Website",
+      "features": [
+        "User authentication with login & registration",
+        "Admin panel to add, edit & delete cars",
+        "Filter functionality based on brand, price, year, etc.",
+        "Responsive car listings with detailed descriptions and images",
+        "Multiple pages including workshop info, contact and about us",
+        "Clean UI/UX with intuitive navigation",
+        "Built using React, Tailwind CSS, and Firebase"
+      ]
+    },
+    "project2": {
+      "title": "Project 2",
+      "subtitle": "Example Title",
+      "features": ["Feature 1", "Feature 2", "Feature 3"]
+    },
+    "project3": {
+      "title": "Project 3",
+      "subtitle": "Another Cool Thing",
+      "features": ["Nice UI", "React Hooks", "API integration"]
+    }
+  },
+  "skills": {
+    "sectionTitle": "Skills",
+    "languages": "Languages",
+    "technicalSkills": "Technical Skills",
+    "tools": "Tools",
+    "databases": "Databases",
+    "softSkills": "Soft Skills",
+    "lists": {
+      "languages": ["HTML", "CSS", "JavaScript", "React", "Docker"],
+      "technicalSkills": [
+        "Graphic Design",
+        "App & Web Development",
+        "UI/UX Design"
+      ],
+      "tools": ["VS Code", "Android Studio", "Figma", "GitHub"],
+      "databases": ["mySQL", "Firebase"],
+      "softSkills": [
+        "Adaptability",
+        "Communication",
+        "Time Management",
+        "Teamwork"
+      ]
+    }
+  },
+  "footer": {
+    "copyright": "Copyright © 2025 - All rights reserved by"
+  }
+}

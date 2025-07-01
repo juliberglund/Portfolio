@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "admin": "Admin"
+  },
+  "intro": {
+    "hi": "Hola, soy",
+    "name": "Julia Berglund",
+    "and_im": "y soy una",
+    "roles": ["Desarrolladora Frontend", "Entusiasta de UI", "Amante de React"],
+    "downloadCV": "Descargar CV",
+    "mySocials": "Mis redes sociales"
+  },
+  "aspiring": {
+    "aspiring": "ASPIRANDO",
+    "role": "Desarrolladora Frontend",
+    "description": "Una desarrolladora Frontend muy motivada con una fuerte pasión por un diseño limpio, interactivo y centrado en el usuario. Deseosa de aportar mis habilidades en tecnologías web modernas y continuar creciendo en un entorno de desarrollo dinámico y colaborativo.",
+    "quote": "▌La tecnología es mi pasión. Construir es mi impulso. Crecer es mi objetivo."
+  },
+  "projects": {
+    "project1": {
+      "title": "NG AUTO",
+      "subtitle": "Sitio web de concesionario de autos",
+      "features": [
+        "Autenticación de usuario con inicio de sesión y registro",
+        "Panel de administrador para añadir, editar y eliminar coches",
+        "Funcionalidad de filtrado por marca, precio, año, etc.",
+        "Listados de coches responsivos con descripciones detalladas e imágenes",
+        "Varias páginas incluyendo taller, contacto y acerca de nosotros",
+        "UI/UX limpio con navegación intuitiva",
+        "Construido con React, Tailwind CSS y Firebase"
+      ]
+    },
+    "project2": {
+      "title": "Proyecto 2",
+      "subtitle": "Título de ejemplo",
+      "features": ["Función 1", "Función 2", "Función 3"]
+    },
+    "project3": {
+      "title": "Proyecto 3",
+      "subtitle": "Otra cosa genial",
+      "features": ["UI agradable", "React Hooks", "Integración de API"]
+    }
+  },
+  "skills": {
+    "sectionTitle": "Habilidades",
+    "languages": "Idiomas",
+    "technicalSkills": "Habilidades técnicas",
+    "tools": "Herramientas",
+    "databases": "Bases de datos",
+    "softSkills": "Habilidades blandas",
+    "lists": {
+      "languages": ["HTML", "CSS", "JavaScript", "React", "Docker"],
+      "technicalSkills": [
+        "Diseño gráfico",
+        "Desarrollo de apps y web",
+        "Diseño UI/UX"
+      ],
+      "tools": ["VS Code", "Android Studio", "Figma", "GitHub"],
+      "databases": ["mySQL", "Firebase"],
+      "softSkills": [
+        "Adaptabilidad",
+        "Comunicación",
+        "Gestión del tiempo",
+        "Trabajo en equipo"
+      ]
+    }
+  },
+  "footer": {
+    "copyright": "Copyright © 2025 - Todos los derechos reservados por"
+  }
+}

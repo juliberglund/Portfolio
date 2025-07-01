@@ -4,6 +4,12 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 import Typewriter from "typewriter-effect";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
+import "../i18n";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -11,17 +17,24 @@ import "swiper/css/pagination";
 const startingProjects = [
   {
     id: 1,
-    title: "Arduino Projects",
-    subtitle: "Capstone Project",
+    title: "NG AUTO",
+    subtitle: "Car Dealership Website",
     features: [
-      "Scheduled & Manual Feed",
-      "Temperature Control",
-      "Water Level Control",
-      "Drainage System",
-      "DO, O2, Temp, PH, and TDS monitoring",
-      "Accessible Via Mobile App",
+      "User authentication with login & registration",
+      "Admin panel to add, edit & delete cars",
+      "Filter functionality based on brand, price, year, etc.",
+      "Responsive car listings with detailed descriptions and images",
+      "Multiple pages including workshop info, contact and about us",
+      "Clean UI/UX with intuitive navigation",
+      "Built using React, Tailwind CSS, and Firebase",
     ],
-    images: ["/pokemon.jpg", "/profile.jpg", "/project1.jpg", "/project2.jpg"],
+    images: [
+      "/NGAUTO4.png",
+      "/NGAUTO3.png",
+      "/NGAUTO2.png",
+      "/NGAUTO1.png",
+      "NGAUTO.png",
+    ],
   },
   {
     id: 2,
@@ -41,8 +54,12 @@ const startingProjects = [
 
 export default function Home() {
   const { techSkills, projects } = useContext(PortfolioContext);
+  const { t } = useTranslation();
 
-  console.log(projects);
+  function Model() {
+    const gltf = useGLTF("/juliaPB.glb"); // eller .glb
+    return <primitive object={gltf.scene} scale={6.5} />;
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -72,6 +89,7 @@ export default function Home() {
               </g>
             </svg>
           </div>
+
           {/* Mitten: Navigationslänkar */}
           <ul className="menu menu-horizontal flex items-center space-x-6">
             <li>
@@ -94,6 +112,9 @@ export default function Home() {
           {/* Höger: ThemeSwitcher + Adminikon */}
           <div className="flex items-center">
             <ThemeSwitcher />
+            <div className="px-2">
+              <LanguageSwitcher />
+            </div>
             <a href="/admin" className="ml-5">
               <img
                 src="/admin-icon.png"
@@ -105,29 +126,25 @@ export default function Home() {
         </section>
       </section>
 
-      <main className="bg-base-100 text-white px-10 py-20">
+      <main className="bg-base-100 px-10 py-20 " id="home">
         <section className="flex flex-col md:flex-row justify-between gap-12">
           {/* Vänstersektion: Presentation */}
           <section className="flex-1">
             <div className="flex items-center gap-4">
-              <p className="text-xl">Hi I am</p>
+              <p className="text-xl">{t("intro.hi")}</p>
               <hr className="w-20 border-blue-400" />
             </div>
 
             <h2 className="text-4xl bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text">
-              Julia Berglund
+              {t("intro.name")}
             </h2>
 
             <h1 className="text-2xl mt-4">
-              and I’m a{" "}
+              {t("intro.and_im")}{" "}
               <span className="text-blue-400 font-semibold">
                 <Typewriter
                   options={{
-                    strings: [
-                      "Frontend Developer",
-                      "UI Enthusiast",
-                      "React Lover",
-                    ],
+                    strings: t("intro.roles", { returnObjects: true }), // <-- Viktigt!
                     autoStart: true,
                     loop: true,
                   }}
@@ -138,13 +155,13 @@ export default function Home() {
             <a
               href="/cv.pdf"
               download
-              className="inline-block mt-6 px-8 py-4 border-2 border-blue-400 font-light rounded hover:bg-blue-400 hover:text-white transition"
+              className="inline-block mt-6 px-8 py-4 border-2 border-blue-400 font-light rounded hover:bg-blue-400 hover:text-blue-500 transition"
             >
-              Download CV
+              {t("intro.downloadCV")}
             </a>
 
             <div className="mt-8">
-              <p className="mb-2 font-semibold">My socials</p>
+              <p className="mb-2 font-semibold">{t("intro.mySocials")}</p>{" "}
               <ul className="flex items-center gap-4">
                 <li>
                   <a href="https://github.com/juliberglund" target="_blank">
@@ -172,30 +189,28 @@ export default function Home() {
           </section>
 
           {/* Mittensektion: 3D-bild / porträtt */}
-          <section className="flex-[1.5] flex justify-center items-center">
-            <img
-              src="/me-3d.png" // byt ut till din 3D-bild eller porträtt
-              alt="3D portrait of Julia"
-              className="rounded-lg shadow-xl w-full max-w-sm object-contain"
-            />
+          <section className="flex-[1.5] flex justify-center items-center h-[400px]">
+            <Canvas>
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[2, 2, 2]} />
+              <Model />
+              <OrbitControls enableZoom={false} />
+            </Canvas>
           </section>
 
           {/* Högersektion: Aspirationstext */}
           <section className="flex-1 bg-base-200 p-6 rounded shadow-md flex flex-col justify-center">
-            <h3 className="text-xl font-light mb-2 text-blue-400">ASPIRING</h3>
-            <h4 className="text-lg font-semibold mb-4">Frontend Developer</h4>
+            <h3 className="text-xl font-light mb-2 text-blue-400">
+              {t("aspiring.aspiring")}
+            </h3>
+            <h4 className="text-lg font-semibold mb-4">{t("aspiring.role")}</h4>
             <p className="text-sm leading-relaxed mb-4">
-              A highly motivated Frontend Developer with a strong passion for
-              clean, interactive, and user-focused design. Eager to contribute
-              my skills in modern web technologies and continue growing in a
-              dynamic and collaborative development environment.
+              {t("aspiring.description")}
             </p>
             <div className="text-sm italic text-blue-300">
               <Typewriter
                 options={{
-                  strings: [
-                    "▌Tech is my passion. Building is my drive. Growth is my goal.",
-                  ],
+                  strings: [t("aspiring.quote")],
                   autoStart: true,
                   loop: true,
                   delay: 40,
@@ -220,7 +235,7 @@ export default function Home() {
           >
             {/* Carousel */}
             <div className="w-full md:w-1/3 flex justify-center ">
-              <div className="w-full max-w-md outline outline-blue-400">
+              <div className="w-full max-w-md outline rounded-lg outline-blue-400">
                 <Swiper
                   modules={[Navigation, Pagination, Autoplay]}
                   spaceBetween={20}
@@ -248,23 +263,30 @@ export default function Home() {
             {/* Text */}
             <div className="w-full md:w-1/2">
               <h3 className="text-2xl font-light text-blue-400 mb-4">
-                {proj.title.toUpperCase()}
+                {t(`projects.project${proj.id}.title`).toUpperCase()}
               </h3>
-              <p className="mb-2 font-semibold">{proj.subtitle}</p>
+              <p className="mb-2 font-semibold">
+                {t(`projects.project${proj.id}.subtitle`)}
+              </p>
+
               {idx === 1 ? (
                 // Projekt 2: text med punkt istället för listan
                 <ul className="text-sm text-blue-100 space-y-1 mb-4 list-none pl-0">
-                  {proj.features.map((f, i) => (
+                  {t(`projects.project${proj.id}.features`, {
+                    returnObjects: true,
+                  }).map((f, i) => (
                     <li key={i}>
-                      {f}
+                      {f}{" "}
                       <span className="ml-1 text-[1.85em] align-middle">•</span>
                     </li>
                   ))}
                 </ul>
               ) : (
                 // Övriga projekt: vanlig punktlista
-                <ul className="list-disc list-inside text-sm text-blue-100 space-y-1 mb-4">
-                  {proj.features.map((f, i) => (
+                <ul className="list-disc list-inside text-sm text-blue-300 space-y-1 mb-4">
+                  {t(`projects.project${proj.id}.features`, {
+                    returnObjects: true,
+                  }).map((f, i) => (
                     <li key={i}>{f}</li>
                   ))}
                 </ul>
@@ -273,10 +295,78 @@ export default function Home() {
           </div>
         ))}
       </section>
+      <section id="skills" className="py-12 px-6 pb-20">
+        {/* Rubrik med blåa streck */}
+        <div className="flex items-center justify-center space-x-4 mb-8">
+          <hr className="flex-1 h-px border-blue-400" />
+          <h2 className="text-2xl font-semibold">{t("skills.sectionTitle")}</h2>
+          <hr className="flex-1 h-px border-blue-400" />
+        </div>
+
+        {/* Grid med kolumner */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {[
+            {
+              title: "languages",
+              list: t("skills.lists.languages", { returnObjects: true }),
+            },
+            {
+              title: "technicalSkills",
+              list: t("skills.lists.technicalSkills", { returnObjects: true }),
+            },
+            {
+              title: "tools",
+              list: t("skills.lists.tools", { returnObjects: true }),
+            },
+          ].map((skill, index) => (
+            <div
+              key={index}
+              className="p-6 border border-blue-400 rounded bg-gradient-to-r from-transparent via-transparent to-transparent transition-all duration-1000 ease-in-out hover:from-purple-950 hover:via-blue-600 hover:to-blue-900 hover:border-transparent hover:text-white"
+            >
+              <h3 className="text-xl font-bold text-blue-400 mb-2">
+                {t(`skills.${skill.title}`)}
+              </h3>
+              <ul className="space-y-1">
+                {skill.list.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Andra raden */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            {
+              title: "databases",
+              list: t("skills.lists.databases", { returnObjects: true }),
+            },
+            {
+              title: "softSkills",
+              list: t("skills.lists.softSkills", { returnObjects: true }),
+            },
+          ].map((skill, index) => (
+            <div
+              key={index}
+              className="p-6 border border-blue-400 rounded bg-gradient-to-r from-transparent via-transparent to-transparent transition-all duration-1000 ease-in-out hover:from-purple-950 hover:via-blue-600 hover:to-blue-900 hover:border-transparent hover:text-white"
+            >
+              <h3 className="text-xl font-bold text-blue-400 mb-2">
+                {t(`skills.${skill.title}`)}
+              </h3>
+              <ul className="space-y-1">
+                {skill.list.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <footer className="footer footer-center bg-base-200 text-base-content p-4 fixed bottom-0">
         <aside>
-          <p>Copyright © 2025 - All right reserved by Julia Berglund</p>
+          <p>{t("footer.copyright")} Julia Berglund</p>
         </aside>
       </footer>
     </div>

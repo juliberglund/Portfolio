@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "home": "Hem",
+    "skills": "Färdigheter",
+    "projects": "Projekt",
+    "admin": "Admin"
+  },
+  "intro": {
+    "hi": "Hej jag är",
+    "name": "Julia Berglund",
+    "and_im": "och jag är en",
+    "roles": ["Frontendutvecklare", "UI‑entusiast", "React‑älskare"],
+    "downloadCV": "Ladda ner CV",
+    "mySocials": "Mina sociala medier"
+  },
+  "aspiring": {
+    "aspiring": "STRÄVANDE",
+    "role": "Frontendutvecklare",
+    "description": "En mycket motiverad Frontendutvecklare med stark passion för ren, interaktiv och användarfokuserad design. Sugen på att bidra med mina kunskaper i moderna webbteknologier och fortsätta växa i en dynamisk och samarbetsinriktad utvecklingsmiljö.",
+    "quote": "▌Teknik är min passion. Att bygga är min drivkraft. Tillväxt är mitt mål."
+  },
+  "projects": {
+    "project1": {
+      "title": "NG AUTO",
+      "subtitle": "Hemsida för bilförsäljningsfirma",
+      "features": [
+        "Användarautentisering med inloggning & registrering",
+        "Adminpanel för att lägga till, redigera & ta bort bilar",
+        "Filtreringsfunktion baserat på märke, pris, år osv.",
+        "Responsiva bilannonser med detaljerade beskrivningar och bilder",
+        "Flera sidor inkl. verkstad, kontakt och om oss",
+        "Ren UI/UX med intuitiv navigering",
+        "Byggt med React, Tailwind CSS och Firebase"
+      ]
+    },
+    "project2": {
+      "title": "Projekt 2",
+      "subtitle": "Exempeltitel",
+      "features": ["Funktion 1", "Funktion 2", "Funktion 3"]
+    },
+    "project3": {
+      "title": "Projekt 3",
+      "subtitle": "En annan cool grej",
+      "features": ["Fin UI", "React Hooks", "API‑integrering"]
+    }
+  },
+  "skills": {
+    "sectionTitle": "Färdigheter",
+    "languages": "Språk",
+    "technicalSkills": "Tekniska färdigheter",
+    "tools": "Verktyg",
+    "databases": "Databaser",
+    "softSkills": "Mjukvaror",
+    "lists": {
+      "languages": ["HTML", "CSS", "JavaScript", "React", "Docker"],
+      "technicalSkills": [
+        "Grafisk design",
+        "App‑ & webbutveckling",
+        "UI/UX‑design"
+      ],
+      "tools": ["VS Code", "Android Studio", "Figma", "GitHub"],
+      "databases": ["mySQL", "Firebase"],
+      "softSkills": [
+        "Anpassningsbarhet",
+        "Kommunikation",
+        "Tidsplanering",
+        "Teamarbete"
+      ]
+    }
+  },
+  "footer": {
+    "copyright": "Copyright © 2025 - Alla rättigheter förbehållna av"
+  }
+}
