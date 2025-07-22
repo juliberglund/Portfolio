@@ -13,9 +13,8 @@ const LanguageSwitcher = () => {
       value={i18n.language}
       className="border border-blue-200 bg-transparent text-white rounded focus:outline-none cursor-pointer "
     >
-      <option value="en">🇬🇧</option>
       <option value="sv">🇸🇪</option>
-      <option value="es">🇪🇸</option>
+      <option value="en">🇬🇧</option>
     </select>
   );
 };
