@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { PortfolioContext } from "@/contexts/PortfolioContext";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import Typewriter from "typewriter-effect";
@@ -8,6 +8,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import { useAnimations } from "@react-three/drei";
 import "../i18n";
 
 import "swiper/css";
@@ -57,8 +58,18 @@ export default function Home() {
   const { t } = useTranslation();
 
   function Model() {
-    const gltf = useGLTF("/juliaPB.glb"); // eller .glb
-    return <primitive object={gltf.scene} scale={6.5} />;
+    const group = useRef();
+    const { scene, animations } = useGLTF("/juliaPB.glb"); // Din GLB-fil
+    const { actions } = useAnimations(animations, group);
+
+    useEffect(() => {
+      // Spela upp första animationen automatiskt
+      if (actions && animations.length > 0) {
+        actions[animations[0].name]?.play();
+      }
+    }, [actions, animations]);
+
+    return <primitive ref={group} object={scene} scale={1.5} />;
   }
 
   return (
@@ -189,7 +200,7 @@ export default function Home() {
           </section>
 
           {/* Mittensektion: 3D-bild / porträtt */}
-          <section className="flex-[1.5] flex justify-center items-center h-[400px]">
+          <section className="flex-[1.5] flex justify-center items-center h-[700px]">
             <Canvas>
               <ambientLight intensity={0.5} />
               <directionalLight position={[2, 2, 2]} />

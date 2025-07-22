@@ -11,3 +11,14 @@
 [data-theme="sunset"] .invert-logo {
   filter: invert(1);
 }
+.custom-cursor {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #3b82f6; /* Tailwind blue-500 */
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
